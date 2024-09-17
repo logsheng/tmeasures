@@ -24,6 +24,7 @@ class AffineTransformation(affine.AffineTransformation,PyTorchTransformation):
 
         r,s,t=self.ap
         r= r*180
+        r = r * np.pi / 180  # Convert degrees to radians
         sx,sy=s
         #tx,ty=t
         matrix = torch.eye(3)
